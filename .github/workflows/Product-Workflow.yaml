@@ -1,0 +1,14 @@
+name: Product-Calling-Workflow
+run-name: ${{ github.actor }} ran pipeline for APIGEE Product deployment.
+on:
+  pull_request:
+      branches:
+        - development
+        - staging
+        - production
+      types:
+        - opened
+jobs:
+  Call_Product_Reusable_workflow:
+    uses: project/apigee-cicd/.github/workflows/Product-CICD.yml@main
+    secrets: inherit

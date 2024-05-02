@@ -1,0 +1,47 @@
+[{
+	"name": "cicd-test-product",
+	"displayName": "cicd-test-product",
+	"approvalType": "auto",
+	"attributes": [
+		{
+			"name": "access",
+			"value": "private"
+		}
+	],
+	"description": "Test product for CICD.",
+	"environments": [
+		"development",
+		"sandbox",
+		"production"
+	],
+	"quota": "120",
+	"quotaInterval": "1",
+	"quotaTimeUnit": "minute",
+	"createdAt": "1685092105331",
+	"lastModifiedAt": "1687981853496",
+	"operationGroup": {
+		"operationConfigs": [
+			{
+				"apiSource": "ping-v1",
+				"operations": [
+					{
+						"resource": "/*",
+						"methods": [
+							"GET",
+							"PATCH",
+							"POST",
+							"PUT"
+						]
+					}
+				],
+				"quota": {
+					"limit": "1",
+					"interval": "3",
+					"timeUnit": "second"
+				}
+			}
+		],
+		"operationConfigType": "proxy"
+	}
+}
+]
